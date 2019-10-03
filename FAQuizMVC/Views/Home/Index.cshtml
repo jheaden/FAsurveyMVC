@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<string>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,15 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+<form asp-action="Index">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <p>@Model[i]</p>
+        <input type="hidden" asp-for="@Model[i]" />
+    }
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>

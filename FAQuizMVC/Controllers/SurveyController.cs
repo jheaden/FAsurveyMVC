@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FAQuizMVC.ViewModels;
 using FAsurveyintoMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using static FAsurveyintoMVC.Models.Lookups;
@@ -10,6 +11,7 @@ namespace FAsurveyintoMVC.Controllers
 {
     public class SurveyController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             var QuestionCollection = new List<Question>();
@@ -27,12 +29,50 @@ namespace FAsurveyintoMVC.Controllers
             QuestionCollection.Add(q4);
             QuestionCollection.Add(q25);
 
+            var model = new SurveyViewModel();
+            model.Questions = QuestionCollection;
 
-            return View(QuestionCollection);
-
+            return View(model);
 
         }
 
+        [HttpPost]
+        public IActionResult Index(SurveyViewModel model)
+        {
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        public IActionResult Test()
+        {
+
+            var model = new TestViewModel();
+            model.Persons = new List<Person>();
+            model.Persons.Add(new Person { Name = "Luke", Age = 36 });
+            model.Persons.Add(new Person { Name = "Donkus", Age = 36 });
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Test(TestViewModel model)
+        {
+
+
+            return RedirectToAction("Test");
+        }
+
+        public class TestViewModel
+        {
+            public List<Person> Persons { get; set; }
+        }
+
+        public class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+        }
 
     }
 }

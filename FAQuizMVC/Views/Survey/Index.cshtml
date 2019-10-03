@@ -1,4 +1,5 @@
-﻿@model List<Question>
+﻿@model FAQuizMVC.ViewModels.SurveyViewModel
+@*@model List<Question>*@
 @{
     ViewData["Title"] = "Index";
 }
@@ -9,23 +10,20 @@
 
 @*foreach loop .net core 2.2 razor*@
 
+<form asp-action="Index">
 
-<form method="post">
-    @foreach (var question in Model)
+    @for (int i = 0; i < Model.Questions.Count; i++)
     {
-        <br />
-        <h4>Question: @question.Content</h4>
-        
-        @foreach (Enum thingy in Lookups.Frequency.GetValues(typeof(Lookups.Frequency)))
-        {
-            <input type="radio" value="@thingy"> @Lookups.GetDescription(thingy)
-            <br />
-        }
+        <input type="hidden" asp-for="@Model.Questions[i].Content" />
+        <input type="hidden" asp-for="@Model.Questions[i].Frequency" />
+        <input type="hidden" asp-for="@Model.Questions[i].Category" />
+        <p>@Model.Questions[i].Content</p>
 
     }
 
+
     <br />
-        <input type="submit" value="Submit" />
-        <br />
-        <br />
+    <input type="submit" value="Submit" />
+    <br />
+    <br />
 </form>

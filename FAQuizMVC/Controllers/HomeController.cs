@@ -10,9 +10,21 @@ namespace FAsurveyintoMVC.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var model = new List<string>();
+
+            model.Add("Test");
+            model.Add("Test2");
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Index(List<string> model)
+        {
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
