@@ -5,14 +5,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FAsurveyintoMVC.Models;
+using FAQuizMVC.ViewModels;
 
 namespace FAsurveyintoMVC.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var model = new TestViewModel();
+
+            model.Test.Add("Test");
+            model.Test.Add("Test2");
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Index(List<string> model)
+        {
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
