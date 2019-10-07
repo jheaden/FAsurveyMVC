@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FAsurveyintoMVC.Models;
+using FAQuizMVC.ViewModels;
 
 namespace FAsurveyintoMVC.Controllers
 {
@@ -13,10 +14,10 @@ namespace FAsurveyintoMVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var model = new List<string>();
+            var model = new TestViewModel();
 
-            model.Add("Test");
-            model.Add("Test2");
+            model.Test.Add("Test");
+            model.Test.Add("Test2");
 
             return View(model);
         }

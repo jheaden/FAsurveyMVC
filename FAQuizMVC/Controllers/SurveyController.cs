@@ -21,13 +21,13 @@ namespace FAsurveyintoMVC.Controllers
             Question q3 = new Question("I ate to the point where I felt physically ill.", Category.largerAmt, Frequency._2to3TimesaMonth);
 
             Question q4 = new Question("I worried a lot about cutting down on certain types of food, but I ate them anyways.", Category.cantQuit, Frequency._4to6TimesAWeek);
-            Question q25 = new Question("I really wanted to cut down on or stop eating certain kinds of foods, but I just couldn’t.", Category.cantQuit, Frequency._4to6TimesAWeek);
+            Question q5 = new Question("I really wanted to cut down on or stop eating certain kinds of foods, but I just couldn’t.", Category.cantQuit, Frequency._4to6TimesAWeek);
 
             QuestionCollection.Add(q1);
             QuestionCollection.Add(q2);
             QuestionCollection.Add(q3);
             QuestionCollection.Add(q4);
-            QuestionCollection.Add(q25);
+            QuestionCollection.Add(q5);
 
             var model = new SurveyViewModel();
             model.Questions = QuestionCollection;
