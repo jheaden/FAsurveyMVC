@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FAsurveyintoMVC.Models
+namespace FAQuizMVC.Models
 {
     public class CategoryScore
     {

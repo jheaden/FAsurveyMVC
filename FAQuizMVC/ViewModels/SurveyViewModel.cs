@@ -1,10 +1,10 @@
-﻿using FAsurveyintoMVC.Models;
+﻿using FAQuizMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static FAsurveyintoMVC.Models.Lookups;
+using static FAQuizMVC.Models.Lookups;
 
 namespace FAQuizMVC.ViewModels
 {

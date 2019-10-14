@@ -1,0 +1,17 @@
+﻿@using FAQuizMVC.Models
+@model FAQuizMVC.ViewModels.ResultsViewModel
+@*@model List<Question>*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>FA Survey</h1>
+
+<form asp-action="Index">
+
+    @Model.Score
+    <br />
+    @Model.Diagnosis
+    <br />
+
+</form>

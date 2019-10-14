@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static FAsurveyintoMVC.Models.Lookups;
+using static FAQuizMVC.Models.Lookups;
 
-namespace FAsurveyintoMVC.Models
+namespace FAQuizMVC.Models
 {
     public class Question
     {

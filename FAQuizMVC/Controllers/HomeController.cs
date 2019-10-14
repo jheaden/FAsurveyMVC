@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using FAsurveyintoMVC.Models;
+using FAQuizMVC.Models;
 using FAQuizMVC.ViewModels;
 
-namespace FAsurveyintoMVC.Controllers
+namespace FAQuizMVC.Controllers
 {
     public class HomeController : Controller
     {

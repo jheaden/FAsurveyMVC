@@ -1,6 +1,6 @@
 using System;
 
-namespace FAsurveyintoMVC.Models
+namespace FAQuizMVC.Models
 {
     public class ErrorViewModel
     {

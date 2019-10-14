@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace FAsurveyintoMVC.Models
+namespace FAQuizMVC.Models
 {
     public static partial class Lookups
     {
@@ -71,7 +71,7 @@ namespace FAsurveyintoMVC.Models
         public enum Category
         {
             [Description("1. Substance taken in larger amount and for longer period than intended")]
-            largerAmt = 1,
+            largerAmt,
             [Description("2. Persistent desire or repeated unsuccessful attempts to quit")]
             cantQuit,
             [Description("3. Much time/activity to obtain, use, recover")]

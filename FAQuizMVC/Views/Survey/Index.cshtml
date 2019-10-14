@@ -1,4 +1,4 @@
-﻿@using FAsurveyintoMVC.Models
+﻿@using FAQuizMVC.Models
 @model FAQuizMVC.ViewModels.SurveyViewModel
 @*@model List<Question>*@
 @{
@@ -7,10 +7,6 @@
 
 <h1>FA Survey</h1>
 
-@*<p>@Model.Content</p>*@
-
-@*foreach loop .net core 2.2 razor*@
-
 <form asp-action="Index">
 
     @for (int i = 0; i < Model.Questions.Count; i++)
@@ -18,15 +14,23 @@
         <input type="hidden" asp-for="@Model.Questions[i].Content" />
         <input type="hidden" asp-for="@Model.Questions[i].Frequency" />
         <input type="hidden" asp-for="@Model.Questions[i].Category" />
-        <p>@Model.Questions[i].Content</p>
+        <strong>Question @(i + 1). @Model.Questions[i].Content</strong>
+        <br />
 
         foreach (var answer in (Lookups.Frequency[])Enum.GetValues(typeof(Lookups.Frequency)))
         {
-            <input type="radio" name="Answers[@i]" value="@((int)answer)" />@answer.GetDescription()<br />
+            @:&nbsp;&nbsp;&nbsp;
+            if ((int)answer == 1)
+            {
+                <input type="radio" name="Answers[@i]" value="@((int)answer)" checked="checked" /> @:&nbsp; @answer.GetDescription()<br />
+            }
+            else
+            {
+                <input type="radio" name="Answers[@i]" value="@((int)answer)" /> @:&nbsp; @answer.GetDescription()<br />
+            }
         }
         <br /><br />
     }
-
 
     <br />
     <input type="submit" value="Submit" />
