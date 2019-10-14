@@ -33,7 +33,7 @@ namespace FAsurveyintoMVC.Controllers
 
             bool[] scoreCategories = new bool[categories.Count];
 
-            //
+            //compare given answer to question's threshold for addiction
             for (int j = 0; j < model.Answers.Count; j++)
             {
                 var answer = model.Answers[j];
@@ -78,8 +78,6 @@ namespace FAsurveyintoMVC.Controllers
 
 
             return View("Result", resultViewModel);
-            //return RedirectToAction("Result"); //change this.
-
         }
 
         [HttpGet]
